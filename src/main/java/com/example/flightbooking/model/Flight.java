@@ -1,5 +1,7 @@
 package com.example.flightbooking.model;
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,7 +9,8 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class Flight {
+public @Data
+class Flight {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int flightID;
@@ -17,61 +20,5 @@ public class Flight {
     private String destination;
     private int price;
     private Date date;
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public int getFlightID() {
-        return flightID;
-    }
-
-    public void setFlightID(int flightID) {
-        this.flightID = flightID;
-    }
-
-    public int getFlightNo() {
-        return flightNo;
-    }
-
-    public void setFlightNo(int flightNo) {
-        this.flightNo = flightNo;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
-    public String getSource() {
-        return source;
-    }
-
-    public void setSource(String source) {
-        this.source = source;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
 
 }

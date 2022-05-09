@@ -29,6 +29,7 @@ public class FlightController {
     public Flight updateFlight(@RequestBody Flight flight){
         return flightRepository.save(flight);
     }
+
     @DeleteMapping(path = "/{id}")
     public HttpStatus deleteFlight(@PathVariable("id") int id){
         flightRepository.deleteById(id);
