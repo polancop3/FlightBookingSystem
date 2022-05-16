@@ -19,18 +19,20 @@ public class PassengerController {
     }
 
     @GetMapping(path = "/all")
-    public @ResponseBody Iterable<Passenger> getPassenger(){
+    public @ResponseBody
+    Iterable<Passenger> getPassenger() {
         return passengerRepository.findAll();
     }
 
     @DeleteMapping(path = "/{id}")
-    public HttpStatus deletePassenger(@PathVariable("id") int id){
+    public HttpStatus deletePassenger(@PathVariable("id") int id) {
         passengerRepository.deleteById(id);
         return HttpStatus.OK;
     }
 
-    @PatchMapping(path ="/update")
+    @PatchMapping(path = "/update")
     public Passenger updatePassenger(@RequestBody Passenger passenger) {
-      return passengerRepository.save(passenger);
+        return passengerRepository.save(passenger);
     }
+
 }
