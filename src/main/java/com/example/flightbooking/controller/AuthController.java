@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @RestController
+@CrossOrigin
 @RequestMapping("/auth")
 public class AuthController {
     @PostMapping("/create-user")
