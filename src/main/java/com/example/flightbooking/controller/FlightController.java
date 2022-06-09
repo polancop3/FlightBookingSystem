@@ -6,9 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Iterator;
-
-@CrossOrigin
 @RestController
 @RequestMapping(path = "/flight")
 public class FlightController {
@@ -20,18 +17,19 @@ public class FlightController {
        return flightRepository.findAll();
     }
 
-    @PostMapping(path = "/addFlight")
-    public Flight addFlight(@RequestBody Flight flight){
+    @PostMapping
+    public Flight addFlight(@RequestBody Flight flight) {
         return flightRepository.save(flight);
     }
 
-    @PatchMapping(path = "/updateFlight")
-    public Flight updateFlight(@RequestBody Flight flight){
+    @PutMapping(path = "/{id}")
+    public Flight updateFlight(@PathVariable("id") int id, @RequestBody Flight flight) {
+        //check if flight exist by id before updating
         return flightRepository.save(flight);
     }
 
     @DeleteMapping(path = "/{id}")
-    public HttpStatus deleteFlight(@PathVariable("id") int id){
+    public HttpStatus deleteFlight(@PathVariable("id") int id) {
         flightRepository.deleteById(id);
         return HttpStatus.OK;
     }

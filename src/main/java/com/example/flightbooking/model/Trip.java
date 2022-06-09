@@ -1,5 +1,4 @@
 package com.example.flightbooking.model;
-
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -8,13 +7,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public @Data
-class Passenger {
+public @Data class Trip {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    private String firstName;
-    private String lastName;
-    private int phoneNumber;
-    private String dob;
+    int id;
+    private int flightId;
+    private String userId;
 }

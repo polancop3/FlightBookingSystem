@@ -13,12 +13,11 @@ public @Data
 class Flight {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int flightID;
+    private int id;
     private int flightNo;
     private int duration;
     private String source;
     private String destination;
     private int price;
     private Date date;
-
 }
