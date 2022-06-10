@@ -9,7 +9,7 @@ import com.example.flightbooking.repository.TripRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
+@CrossOrigin
 @RestController
 @RequestMapping(path = "/trip")
 public class TripController {

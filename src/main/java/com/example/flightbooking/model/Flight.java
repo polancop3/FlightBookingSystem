@@ -14,6 +14,7 @@ class Flight {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     private int flightNo;
     private int duration;
     private String source;

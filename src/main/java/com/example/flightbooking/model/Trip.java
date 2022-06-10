@@ -11,6 +11,7 @@ public @Data class Trip {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
+
     private int flightId;
     private String userId;
 }
